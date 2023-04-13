@@ -6,6 +6,7 @@ function App() {
   const [html, setHtml] = useLocalStorage("html", "");
   const [css, setCss] = useLocalStorage("css", "");
   const [js, setJs] = useLocalStorage("js", "");
+
   const [srcDoc, setSrcDoc] = useState("");
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -28,6 +29,12 @@ function App() {
           displayName="HTML"
           value={html}
           onChange={setHtml}
+        />
+        <Editor
+          language="jsx"
+          displayName="JS"
+          value={js}
+          onChange={setJs}
         />
         <Editor
           language="css"
